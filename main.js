@@ -12,31 +12,41 @@ function characterSearch() {
     // Test Input Variable and update the page
     if (name == 'tigress' || name == 'master tigress') {
         // Update page to Tigress
-        document.getElementById('main-img').src = 'images/tigress.png';
-        document.getElementById('character-name').innerHTML = 'Tigress';
-        document.getElementById('quote').innerHTML = '"That was pretty hardcore!"';
-        document.getElementById('wiki-link').innerHTML = 'Tigress Wiki';
-        document.getElementById('wiki-link').href = 'https://kungfupanda.fandom.com/wiki/Tigress';
+        updatePage('Tigress', '"That was pretty hardcore!"');
     } else if (name == 'mantis' || name == 'master mantis') {
         // Update page to Mantis
-        document.getElementById('main-img').src = 'images/mantis.png';
-        document.getElementById('character-name').innerHTML = 'Mantis';
-        document.getElementById('quote').innerHTML = '"Fear the bug!"';
-        document.getElementById('wiki-link').innerHTML = 'Mantis Wiki';
-        document.getElementById('wiki-link').href = 'https://kungfupanda.fandom.com/wiki/Mantis';
+        updatePage('Mantis', '"Fear the bug!"');
     } else if (name == 'monkey' || name == 'master monkey') {
         // Update page to Monkey
-        document.getElementById('main-img').src = 'images/monkey.png';
-        document.getElementById('character-name').innerHTML = 'Monkey';
-        document.getElementById('quote').innerHTML = '"We should hang out."';
-        document.getElementById('wiki-link').innerHTML = 'Monkey Wiki';
-        document.getElementById('wiki-link').href = 'https://kungfupanda.fandom.com/wiki/Monkey';
-    } else {
-        // Update page to Question Mark
-        document.getElementById('main-img').src = 'images/question-mark.png';
-        document.getElementById('character-name').innerHTML = '?????';
-        document.getElementById('quote').innerHTML = '"Character Not Found"';
-        document.getElementById('wiki-link').innerHTML = 'Wiki Home';
-        document.getElementById('wiki-link').href = 'https://kungfupanda.fandom.com/wiki/Kung_Fu_Panda_Wiki';
+        updatePage('Monkey', '"We should hang out."');
+    } else if (name == 'crane' || name == 'master crane') {
+        // update pg to crane
+        updatePage('Crane','"You can chain my body, but you will never chain my warrior spirit!"');
+    } else if (name == 'po' || name == 'master po') {
+        // update pg to po
+        updatePage('Po','"Buddy, I am the Dragon Warrior."');
+    } else if (name == 'viper' || name == 'master viper') {
+        // update pg to viper
+        updatePage('Viper','"I don'+"'t need to bite to fight"+'!"');
     }
+    else {
+        // Update page to Question Mark
+        questionMark();
+    }
+}
+
+function updatePage(name, quote) {
+    document.getElementById('main-img').src = 'images/' + name.toLowerCase() + '.png';
+    document.getElementById('character-name').innerHTML = name;
+    document.getElementById('quote').innerHTML = quote;
+    document.getElementById('wiki-link').innerHTML = name + ' Wiki';
+    document.getElementById('wiki-link').href = 'https://kungfupanda.fandom.com/wiki/' + name;
+}
+
+function questionMark() {
+    document.getElementById('main-img').src = 'images/question-mark.png';
+    document.getElementById('character-name').innerHTML = '?????';
+    document.getElementById('quote').innerHTML = '"Character Not Found"';
+    document.getElementById('wiki-link').innerHTML = 'Wiki Home';
+    document.getElementById('wiki-link').href = 'https://kungfupanda.fandom.com/wiki/Kung_Fu_Panda_Wiki';
 }
